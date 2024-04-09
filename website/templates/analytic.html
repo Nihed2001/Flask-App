@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Analytics Data</title>
+    <style>
+        body {
+            background: url("/static/images/gla.jpg") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: absolute;
+            top: 55%;
+            left: 17%; /* Adjusted position to the left */
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .quote-container {
+            position: absolute;
+            top: 85%;
+            right: 100px; /* Adjusted position to the right */
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 1;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 18px;
+            color: #0c0000;
+        }
+
+        .author {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .welcome-container {
+            position: absolute;
+            top: calc(50% - 400px);
+            left: -100%;
+            transform: translateX(0%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 1;
+            animation: slideFromLeft 1s ease-out forwards;
+        }
+
+        @keyframes slideFromLeft {
+            from {
+                left: -100%;
+                transform: translateX(0%);
+            }
+            to {
+                left: 10%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Box -->
+    <div class="welcome-container">
+        <h2>Welcome to Analytics Page</h2>
+        <p>This project is created by Nihed Nciri.</p>
+    </div>
+
+    <!-- Data Table -->
+    <div class="container">
+        <h1>Google Analytics Data Visualization</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    {% for header in headers %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        {% for item in row %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Quote Box -->
+    <div class="quote-container">
+        <p class="quote">"Data is the new oil of the digital economy."</p>
+        <p class="author">- Clive Humby</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="login-box">
+        <h3 align="center" style="color: #fff;">Login</h3>
+        <form method="POST">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Enter password"
+            />
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="shadow-animation"></div>
+
+<style>
+  body {
+    background: url("/static/images/canva.png") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .login-box {
+    background-color: #000; /* Black background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 250px; /* Add some top margin */
+    position: relative;
+  }
+
+  .login-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 50px; /* Initial shadow color */
+  animation: animateShadow 2s infinite alternate; /* Alternate the animation direction */
+  z-index: -1;
+}
+
+@keyframes animateShadow {
+  0% {
+    box-shadow: 0 0 50px rgba(0, 0, 255, 0.5); /* Start with light blue shadow */
+  }
+  25% {
+    box-shadow: 0 0 50px rgba(0, 0, 255, 0.7); /* Slightly darker blue shadow at 25% */
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(0, 0, 255, 0.9); /* Medium blue shadow at 50% */
+  }
+  75% {
+    box-shadow: 0 0 50px rgba(0, 0, 255, 0.7); /* Slightly darker blue shadow at 75% */
+  }
+  100% {
+    box-shadow: 0 0 50px rgba(0, 0, 255, 0.5); /* Return to light blue shadow at 100% */
+  }
+}
+
+
+  .form-group {
+    color: #fff; /* White label text */
+  }
+
+  .btn-primary {
+    background-color: transparent; /* Make background transparent */
+    color: #fff; /* Set text color to white */
+    border: none; /* Remove border */
+    position: absolute; /* Position the button absolutely */
+    left: 50%; /* Move button to the middle horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    bottom: 20px; /* Position button at the bottom with some space */
+    animation: animateButton 2s infinite alternate; /* Apply animation to the button */
+}
+
+@keyframes animateButton {
+    0% {
+        background-color: rgba(0, 0, 255, 0.5); /* Start with light blue background */
+    }
+    25% {
+        background-color: rgba(0, 0, 255, 0.7); /* Slightly darker blue at 25% */
+    }
+    50% {
+        background-color: rgba(0, 0, 255, 0.9); /* Medium blue at 50% */
+    }
+    75% {
+        background-color: rgba(0, 0, 255, 0.7); /* Slightly darker blue at 75% */
+    }
+    100% {
+        background-color: rgba(0, 0, 255, 0.5); /* Return to light blue at 100% */
+    }
+}
+h3 {
+    position: relative; /* Position the title relatively */
+    animation: animateTitle 2s infinite alternate; /* Apply animation to the title */
+}
+
+@keyframes animateTitle {
+    0% {
+        color: rgba(0, 0, 255, 0.5); /* Start with light blue color */
+    }
+    25% {
+        color: rgba(0, 0, 255, 0.7); /* Slightly darker blue at 25% */
+    }
+    50% {
+        color: rgba(0, 0, 255, 0.9); /* Medium blue at 50% */
+    }
+    75% {
+        color: rgba(0, 0, 255, 0.7); /* Slightly darker blue at 75% */
+    }
+    100% {
+        color: rgba(0, 0, 255, 0.5); /* Return to light blue at 100% */
+    }
+}
+
+</style>
+{% endblock %}
